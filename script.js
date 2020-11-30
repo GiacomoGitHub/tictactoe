@@ -3,7 +3,25 @@ const gameBoard = (() => {
 
     // Store the game in this array
     let array = ["", "", "", "", "", "", "", "", ""];
-    
+
+    let resetButton = document.getElementById("resetButton");
+    resetButton.addEventListener("click", () => {
+        gameLogic.messageTheUser.innerHTML = "X starts first";
+        playerX.turnPower = 1;
+        playerO.turnPower = 0;
+        array = ["", "", "", "", "", "", "", "", ""];
+        gameBoard.array = array;
+        square1.innerHTML = (array[0]).valueOf();
+        square2.innerHTML = (array[1]).valueOf();
+        square3.innerHTML = (array[2]).valueOf();
+        square4.innerHTML = (array[3]).valueOf();
+        square5.innerHTML = (array[4]).valueOf();
+        square6.innerHTML = (array[5]).valueOf();
+        square7.innerHTML = (array[6]).valueOf();
+        square8.innerHTML = (array[7]).valueOf();
+        square9.innerHTML = (array[8]).valueOf();
+    });
+
     // Show each array item in the grid and change the array
     function showMarks () {
     let square1 = document.getElementById("square1");
@@ -171,28 +189,29 @@ const gameLogic = (() => {
     
     gameBoard.showMarks();
 
+    let messageTheUser = document.getElementById("message-to-user");
 
     function declareWinner () {
         if (gameBoard.array[0] !== "" && gameBoard.array[0] === gameBoard.array[1] && gameBoard.array[0] === gameBoard.array[2]) {
-            alert(gameBoard.array[0] + " is the winner!");
+            messageTheUser.innerHTML = gameBoard.array[0] + " is the winner! Bravo! 🎉";
         } else if (gameBoard.array[3] !== "" && gameBoard.array[3] === gameBoard.array[4] && gameBoard.array[3] === gameBoard.array[5]) {
-            alert(gameBoard.array[3] + " is the winner!");
+            messageTheUser.innerHTML = gameBoard.array[3] + " is the winner! Bravo! 🎉";
         } else if (gameBoard.array[6] !== "" && gameBoard.array[6] === gameBoard.array[7] && gameBoard.array[6] === gameBoard.array[8]) {
-            alert(gameBoard.array[6] + " is the winner!");
+            messageTheUser.innerHTML = gameBoard.array[6] + " is the winner! Bravo! 🎉";
         } else if (gameBoard.array[0] !== "" && gameBoard.array[0] === gameBoard.array[4] && gameBoard.array[0] === gameBoard.array[8]) {
-            alert(gameBoard.array[0] + " is the winner!");
+            messageTheUser.innerHTML = gameBoard.array[0] + " is the winner! Bravo! 🎉";
         } else if (gameBoard.array[2] !== "" && gameBoard.array[2] === gameBoard.array[4] && gameBoard.array[2] === gameBoard.array[6]) {
-            alert(gameBoard.array[2] + " is the winner!");
+            messageTheUser.innerHTML = gameBoard.array[2] + " is the winner! Bravo! 🎉";
         } else if (gameBoard.array[0] !== "" && gameBoard.array[0] === gameBoard.array[3] && gameBoard.array[0] === gameBoard.array[6]) {
-            alert(gameBoard.array[0] + " is the winner!");
+            messageTheUser.innerHTML = gameBoard.array[0] + " is the winner! Bravo! 🎉";
         } else if (gameBoard.array[1] !== "" && gameBoard.array[1] === gameBoard.array[4] && gameBoard.array[1] === gameBoard.array[7]) {
-            alert(gameBoard.array[1] + " is the winner!");
+            messageTheUser.innerHTML = gameBoard.array[1] + " is the winner! Bravo! 🎉";
         } else if (gameBoard.array[2] !== "" && gameBoard.array[2] === gameBoard.array[5] && gameBoard.array[5] === gameBoard.array[8]) {
-            alert(gameBoard.array[2] + " is the winner!");
+            messageTheUser.innerHTML = gameBoard.array[2] + " is the winner! Bravo! 🎉";
         }
     }
 
-    return { declareWinner }
+    return { declareWinner, messageTheUser }
 
 })();
 

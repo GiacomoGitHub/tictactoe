@@ -6,10 +6,10 @@ body {
     font-size: 200%;
 }
 
-h1 {
+h2 {
     margin: auto;
-    margin-top: 7%;
-    font-size: 4em;
+    margin-top: 2%;
+    font-size: 3em;
 }
 
 button {
@@ -22,8 +22,8 @@ button {
 }
 
 button:hover {
-    background-color: rgba(42, 93, 119, 0.644);
-    border: solid 2px rgba(42, 93, 119, 0.644);
+    background-color: rgba(42, 93, 119);
+    border: solid 2px rgba(42, 93, 119);
     color: rgb(207,214,195);
     cursor: pointer;
 }
@@ -36,7 +36,7 @@ button:active {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: fit-content;
-    margin-top: 5%;
+    margin-top: 50px;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
@@ -47,6 +47,10 @@ button:active {
 .square {
     border: 4px solid rgb(42,93,119);
     padding: 50px;
+    min-height: 30px;
+    max-height: 30px;
+    min-width: 30px;
+    max-width: 30px;
 }
 
 .square:hover {
@@ -57,6 +61,7 @@ button:active {
 #square1 {
     border-left: none;
     border-top: none;
+    padding: 50px;
 }
 
 #square2 {
